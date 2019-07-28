@@ -1,184 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="140c38eb-762b-46bc-a2f4-0b528e6680b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../android/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/capacitor.build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/assets/capacitor.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/ic_launcher-web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/java/com/tstaudt/clipboard/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-land-hdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-land-mdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-land-xhdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-land-xxhdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-land-xxxhdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-port-hdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-port-mdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-port-xhdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-port-xxhdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-port-xxxhdpi/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable/launch_splash.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/drawable/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/main/res/xml/file_paths.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/capacitor.settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CapacitorAppShortcuts.podspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/buildConfig/debug/com/tstaudt/capacitorAppShortcuts/capacitorappshortcuts/BuildConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/annotations_typedef_file/debug/extractDebugAnnotations/typedefs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/debug-mergeJniLibs/merge-state" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebugAssets/merger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tstaudt/capacitorAppShortcuts/AppShortcuts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tstaudt/capacitorAppShortcuts/capacitorappshortcuts/BuildConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/library_manifest/debug/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/merged_manifests/debug/output.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/packaged-classes/debug/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/layout/bridge_layout_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/transforms/mergeJavaRes/debug/0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/outputs/aar/android-debug.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/com/getcapacitor/android/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tstaudt/capacitorAppShortcuts/AppShortcuts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/bridge_layout_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/getcapacitor/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/Plugin.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/Plugin/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/Plugin/Plugin.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/Plugin/Plugin.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/Plugin/Plugin.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/PluginTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/PluginTests/PluginTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ios/Podfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rollup.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/definitions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/models/dynamic-shortcut.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/web.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capacitor.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/core/app-shortcuts/app-shortcut.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/core/app-shortcuts/models/android-app-shortcut.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/core/app-shortcuts/models/app-shortcut.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/core/stuffs/stuffs.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ionic.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../ionic.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/app-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/app-config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/stuffs/stuffs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/stuffs/stuffs.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/stuffs/stuffs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/stuffs/stuffs.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/category-detail/category-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/category-detail/category-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/category-detail/category-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/category-detail/category-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tab2/tab2.translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/categories/categories.translations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tabs/tabs.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/tabs/tabs.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app/tabs/tabs.router.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/tabs/tabs.router.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/core/core.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/core/theme/theme.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/core/theme/theme.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/models/copy-item.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/models/copy-item.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/modules/copy-item/copy-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/modules/copy-item/copy-item.component.ts" afterDir="false" />
+    <list default="true" id="9a9c01d3-653f-454d-bb0d-62be7d02f6f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_support_v4_r7_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,15 +21,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view />
-      </state>
-    </system>
-  </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-1732872276">
+    <session id="-667382845">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="1" />
@@ -203,140 +31,44 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="1" />
-          <entry key="java" value="20" />
-          <entry key="xml" value="3" />
+          <entry key="java" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="20" />
-          <entry key="XML" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="36" />
-          <entry key="gradle" value="2" />
-          <entry key="java" value="2159" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="2159" />
-          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="JAVA" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/generated/source/buildConfig/debug/com/tstaudt/capacitorAppShortcuts/capacitorappshortcuts/BuildConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/getcapacitor/android/ExampleInstrumentedTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/getcapacitor/ExampleUnitTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tstaudt/capacitorAppShortcuts/AppShortcuts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#echo#0;class#AppShortcuts#0" />
-                <element signature="method#setDynamicShortcuts#0;class#AppShortcuts#0" />
-                <element signature="method#supportsPinned#0;class#AppShortcuts#0" />
-                <element signature="method#getIntent#0;class#AppShortcuts#0" />
-                <element signature="method#supportsDynmic#0;class#AppShortcuts#0" />
-                <element signature="method#addPinned#0;class#AppShortcuts#0" />
-                <element signature="method#handleOnNewIntent#0;class#AppShortcuts#0" />
-                <element signature="method#buildIntent#0;class#AppShortcuts#0" />
-                <element signature="method#parseIntent#0;class#AppShortcuts#0" />
-                <element signature="method#buildDynamicShortcut#0;class#AppShortcuts#0" />
-                <element signature="method#buildPinnedShortcut#0;class#AppShortcuts#0" />
-                <element signature="method#decodeBase64Bitmap#0;class#AppShortcuts#0" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>getActivity</find>
-      <find>21</find>
-      <find>onNewIntentCallbackContext</find>
-      <find>exec</find>
-      <find>execute</find>
-      <find>catch</find>
-      <find>AppCompatActivity</find>
-      <find>Activity</find>
-      <find>activity = getActivity();</find>
-      <find>this.call</find>
-      <find>OnNewIntent</find>
-    </findStrings>
-    <dirStrings>
-      <dir>C:\Users\goto2\Documents\Bitbucket\com.tstaudt.copypaste.mobileApp\capacitor-app-shortcuts\android</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$/../../android" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../Bitbucket/com.tstaudt.copypaste.mobileApp/android" value="PREVIEW" />
       </map>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tstaudt/capactior-app-shortcuts/AppShortcuts.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tstaudt/capacitorAppShortcuts/AppShortcuts.java" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="795" />
-    <option name="y" value="73" />
+    <option name="x" value="373" />
+    <option name="y" value="142" />
     <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -344,7 +76,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -355,24 +86,7 @@
             <path>
               <item name="android" type="1abcf292:AndroidViewProjectNode" />
               <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="getcapacitor" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="android" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="android" type="1abcf292:AndroidViewProjectNode" />
@@ -380,33 +94,16 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capacitorAppShortcuts" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="capacitorappshortcuts" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="android.project.structure.last.selected" value="android" />
-    <property name="android.project.structure.proportion" value="0.26375" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -436,19 +133,18 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="140c38eb-762b-46bc-a2f4-0b528e6680b5" name="Default Changelist" comment="" />
-      <created>1564301510663</created>
+      <changelist id="9a9c01d3-653f-454d-bb0d-62be7d02f6f9" name="Default Changelist" comment="" />
+      <created>1564316336810</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1564301510663</updated>
+      <updated>1564316336810</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" visible="true" weight="0.17567568" />
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.17567568" />
       <window_info id="Structure" side_tool="true" />
       <window_info id="Build Variants" side_tool="true" />
       <window_info id="Image Layers" />
@@ -460,10 +156,9 @@
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.093603745" />
+      <window_info anchor="bottom" id="Build" visible="true" weight="0.22152886" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Gradle" />
@@ -475,138 +170,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="891" column="18" selection-start-line="891" selection-start-column="18" selection-end-line="891" selection-end-column="18" />
-          <folding>
-            <element signature="e#42323#42324#0" expanded="true" />
-            <element signature="e#42353#42354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/graphics/drawable/Icon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="528" column="54" selection-start-line="528" selection-start-column="54" selection-end-line="528" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
-          <folding>
-            <element signature="e#1768#1769#0" expanded="true" />
-            <element signature="e#1806#1807#0" expanded="true" />
-            <element signature="e#5476#5477#0" expanded="true" />
-            <element signature="e#5527#5528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/bridge_layout_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="504" column="34" selection-start-line="504" selection-start-column="23" selection-end-line="504" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#16595#16596#0" expanded="true" />
-            <element signature="e#16629#16630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/generated/source/buildConfig/debug/com/tstaudt/capacitorAppShortcuts/capacitorappshortcuts/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/androidTest/java/com/getcapacitor/android/ExampleInstrumentedTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/getcapacitor/ExampleUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tstaudt/capacitorAppShortcuts/AppShortcuts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#echo#0;class#AppShortcuts#0" />
-            <element signature="method#setDynamicShortcuts#0;class#AppShortcuts#0" />
-            <element signature="method#supportsPinned#0;class#AppShortcuts#0" />
-            <element signature="method#getIntent#0;class#AppShortcuts#0" />
-            <element signature="method#supportsDynmic#0;class#AppShortcuts#0" />
-            <element signature="method#addPinned#0;class#AppShortcuts#0" />
-            <element signature="method#handleOnNewIntent#0;class#AppShortcuts#0" />
-            <element signature="method#buildIntent#0;class#AppShortcuts#0" />
-            <element signature="method#parseIntent#0;class#AppShortcuts#0" />
-            <element signature="method#buildDynamicShortcut#0;class#AppShortcuts#0" />
-            <element signature="method#buildPinnedShortcut#0;class#AppShortcuts#0" />
-            <element signature="method#decodeBase64Bitmap#0;class#AppShortcuts#0" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="25" />
         </state>
       </provider>
     </entry>
