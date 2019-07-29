@@ -1,6 +1,6 @@
 {
   "name": "capacitor-app-shortcuts",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "App shortcuts capacitor plugin",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -41,9 +41,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "a"
+    "url": "https://github.com/GoTo225/capacitor-app-shortcuts.git"
   },
   "bugs": {
-    "url": "a/issues"
+    "url": "https://github.com/GoTo225/capacitor-app-shortcuts/issues"
   }
 }

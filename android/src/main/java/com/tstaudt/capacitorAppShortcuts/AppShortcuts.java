@@ -1,7 +1,6 @@
 package com.tstaudt.capacitorAppShortcuts;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -49,12 +48,6 @@ import java.util.Set;
 public class AppShortcuts extends Plugin {
 
     private static final String TAG = "ShortcutsPlugin";
-    private static final String ACTION_SUPPORTS_DYNAMIC = "supportsDynamic";
-    private static final String ACTION_SUPPORTS_PINNED = "supportsPinned";
-    private static final String ACTION_SET_DYNAMIC = "setDynamic";
-    private static final String ACTION_ADD_PINNED = "addPinned";
-    private static final String ACTION_GET_INTENT = "getIntent";
-    private static final String ACTION_ON_NEW_INTENT = "onNewIntent";
 
     @PluginMethod()
     public void echo(PluginCall call) {
@@ -134,8 +127,7 @@ public class AppShortcuts extends Plugin {
     @PluginMethod()
     public void addPinned(PluginCall call) {
         try {
-            JSONArray args = call.getArray("shortcuts");
-            ShortcutInfoCompat shortcut = buildPinnedShortcut(args.optJSONObject(0));
+            ShortcutInfoCompat shortcut = buildPinnedShortcut(call.getData());
             AppCompatActivity activity = getActivity();
             Context context = activity.getApplicationContext();
             boolean result = ShortcutManagerCompat.requestPinShortcut(context, shortcut, null);
