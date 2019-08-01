@@ -10,12 +10,7 @@ export interface IAppShortcutsPlugin {
     /**
      * Resolves promise, if dynamic shortcuts are supported
      */
-    supportsDynamic(): Promise<void>;
-
-    /**
-     * Resolves promise, if dynamic shortcuts are supported
-     */
-    supportsPinned(): Promise<void>;
+    iSupported(): Promise<ShortcutSupport>;
 
     /**
      * Add a pinned shortcut
@@ -28,14 +23,10 @@ export interface IAppShortcutsPlugin {
     setDynamic(shortcut: Array<Shortcut>): Promise<void>;
 
     /**
-     * Subscribe on new intent
+     * Get the data of the shortcut icon, that opened the app (activity)
+     * This function fails, if the app was launched via press on the app icon
      */
-    onNewIntent(): Promise<any>;
-
-    /**
-     * Get intent
-     */
-    getIntent(): Promise<any>;
+    onHomeIconPressed(): Promise<any>;
 }
 
 export interface Shortcut {
@@ -45,39 +36,72 @@ export interface Shortcut {
     id: string;
 
     /**
-     * 'Short description'
+     * Title of the app shortcut
      */
-    shortLabel: string;
+    title: string;
 
     /**
-     * Longer string describing the shortcut
+     * Subtitle of the app shortcut
      */
-    longLabel: string;
+    subtitle: string;
 
     /**
-     * Base 64 encoded icon for the shortcut. DEFAULT: AppIcon
+     * iOS only: Icon presets
+     */
+    icon?: IOSShortcutIcon
+
+    /**
+     * Android only: Base 64 encoded icon for the shortcut. DEFAULT: AppIcon
      */
     iconBitmap?: string;
 
     /**
-     * filename w/o extension of an icon that resides on res/drawable-* (hdpi,mdpi..)
+     * Android: filename w/o extension of an icon that resides on res/drawable-* (hdpi,mdpi..)
+     * iOS: Can be used to provide your own icon. It must be a valid name of an icon template in your Assets catalog.
      */
     iconFromResource?: string;
+}
+
+export interface ShortcutSupport {
+    /**
+     * True, if the device supports app shortcuts
+     */
+    appShortcuts: boolean;
 
     /**
-     * content for the intent
+     * Android only: True, if the device supports pinned shortcuts;
      */
-    intent: {
-        action: 'android.intent.action.RUN',
-        categories: [
-            'android.intent.category.TEST', // Built-in Android category
-            'MY_CATEGORY' // Custom categories are also supported
-        ],
-        flags: 67108864,
-        data: 'myapp://path/to/launch?param=value', // Must be a well-formed URI
-        extras: {
-            'android.intent.extra.SUBJECT': 'Hello world!', // Built-in Android extra (string)
-            'MY_BOOLEAN': true, // Custom extras are also supported (boolean, number and string only)
-        }
-    }
+    pinnedShortcuts: boolean;
+}
+
+export enum IOSShortcutIcon {
+    Compose = 'Compose',
+    Play = 'Play',
+    Pause = 'Pause',
+    Add = 'Add',
+    Location = 'Location',
+    Search = 'Search',
+    Share = 'Share',
+    Prohibit = 'Prohibit',
+    Contact = 'Contact',
+    Home = 'Home',
+    MarkLocation = 'MarkLocation',
+    Favorite = 'Favorite',
+    Love = 'Love',
+    Cloud = 'Cloud',
+    Invitation = 'Invitation',
+    Confirmation = 'Confirmation',
+    Mail = 'Mail',
+    Message = 'Message',
+    Date = 'Date',
+    Time = 'Time',
+    CapturePhoto = 'CapturePhoto',
+    CaptureVideo = 'CaptureVideo',
+    Task = 'Task',
+    TaskCompleted = 'TaskCompleted',
+    Alarm = 'Alarm',
+    Bookmark = 'Bookmark',
+    Shuffle = 'Shuffle',
+    Audio = 'Audio',
+    Update = 'Update',
 }

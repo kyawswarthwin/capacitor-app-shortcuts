@@ -48,14 +48,25 @@ import java.util.Set;
 public class AppShortcuts extends Plugin {
 
     private static final String TAG = "ShortcutsPlugin";
+    private JSONObject latestIntent = null;
+    private PluginCall onNewIntentCallbackContext = null;
 
     @PluginMethod()
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void isSupported(PluginCall call) {
+        AppCompatActivity activity = getActivity();
 
-        JSObject ret = new JSObject();
-        ret.put("value", value);
-        call.success(ret);
+        Context context = activity.getApplicationContext();
+        boolean appShortcutsSupported = ShortcutManagerCompat.isRequestPinShortcutSupported(context);
+
+        JSONObject json = new JSONObject();
+
+        try {
+            json.put("appShortcuts", Build.VERSION.SDK_INT >= 25);
+            json.put("pinnedShortcuts", appShortcutsSupported);
+            call.success(new JSObject(String.valueOf(json)));
+        } catch (JSONException e) {
+            call.error(e.getMessage(), e);
+        }
     }
 
     @PluginMethod()
@@ -63,8 +74,12 @@ public class AppShortcuts extends Plugin {
 
         try {
             JSArray args = call.getArray("shortcuts");
+            if (args.length() < 1) {
+                call.reject("Inserted value is not a array or has no values");
+            }
 
             int count = args.length();
+
             ArrayList<ShortcutInfo> shortcuts = new ArrayList<ShortcutInfo>(count);
 
             for (int i = 0; i < count; ++i) {
@@ -82,45 +97,6 @@ public class AppShortcuts extends Plugin {
             call.reject(e.getMessage(), e);
         } catch (JSONException e) {
             call.reject(e.getMessage(), e);
-        }
-    }
-
-    @PluginMethod()
-    public void supportsPinned(PluginCall call) {
-        AppCompatActivity activity = getActivity();
-
-        Context context = activity.getApplicationContext();
-        boolean supported = ShortcutManagerCompat.isRequestPinShortcutSupported(context);
-
-        if (supported) {
-            call.success();
-        } else {
-            call.reject("Pinned shortcuts care not supported on this platform");
-        }
-    }
-
-    @PluginMethod()
-    public void getIntent(PluginCall call) {
-        // Intent intent = new Intent(Intent.ACTION_VIEW);
-        // Intent intent = this.cordova.getActivity().getIntent();
-        try {
-            AppCompatActivity activity = getActivity();
-            Intent intent = activity.getIntent();
-
-            PluginResult result = new PluginResult(new JSObject(String.valueOf(buildIntent(intent))));
-            call.success(new JSObject(String.valueOf(result)));
-        } catch (JSONException e) {
-            call.reject(e.getMessage(), e);
-        }
-    }
-
-    @PluginMethod()
-    public void supportsDynamic(PluginCall call) {
-        boolean supported = Build.VERSION.SDK_INT >= 25;
-        if (supported) {
-            call.success();
-        } else {
-            call.error("Dynamic shortcuts are not supported!");
         }
     }
 
@@ -143,11 +119,39 @@ public class AppShortcuts extends Plugin {
         }
     }
 
+    @PluginMethod()
+    public void getIntent(PluginCall call) {
+        // Intent intent = new Intent(Intent.ACTION_VIEW);
+        // Intent intent = this.cordova.getActivity().getIntent();
+        try {
+            AppCompatActivity activity = getActivity();
+            Intent intent = activity.getIntent();
+
+            PluginResult result = new PluginResult(new JSObject(String.valueOf(buildIntent(intent))));
+            call.success(new JSObject(String.valueOf(result)));
+        } catch (JSONException e) {
+            call.reject(e.getMessage(), e);
+        }
+    }
+
+    @PluginMethod()
+    public void onHomeIconPressed(PluginCall call) {
+        try {
+            call.resolve(new JSObject(this.latestIntent.getString("data")));
+        } catch (JSONException e) {
+            call.reject("App was started via app icon press");
+        }
+    }
+
     @Override
     public void handleOnNewIntent(Intent intent) {
         try {
+            // TODO: event only for testing purposes!
             bridge.triggerWindowJSEvent("onNewIntent", String.valueOf(buildIntent(intent)));
-        } catch (JSONException e) {
+
+
+            this.latestIntent = buildIntent(intent);
+        } catch (Exception e) {
             Log.e(TAG, "Exception handling onNewIntent: " + e.getMessage());
         }
     }
@@ -195,7 +199,7 @@ public class AppShortcuts extends Plugin {
         return jsonIntent;
     }
 
-    private Intent parseIntent(JSONObject jsonIntent) throws JSONException {
+    private Intent parseIntent(JSONObject jsonIntent, JSONObject shortcut) {
 
         Intent intent = new Intent();
         AppCompatActivity activity = getActivity();
@@ -207,59 +211,17 @@ public class AppShortcuts extends Plugin {
                 activity.getPackageName());
         intent.setClassName(activityPackage, activityClass);
 
-        String action = jsonIntent.optString("action", Intent.ACTION_VIEW);
-        if (action.indexOf('.') < 0) {
-            action = activityPackage + '.' + action;
-        }
-        Log.i(TAG, "Creating new intent with action: " + action);
-        intent.setAction(action);
-
         int flags = jsonIntent.optInt("flags", Intent.FLAG_ACTIVITY_NEW_TASK + Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.setFlags(flags); // TODO: Support passing different flags
 
-        JSONArray jsonCategories = jsonIntent.optJSONArray("categories");
-        if (jsonCategories != null) {
-            int count = jsonCategories.length();
-            for (int i = 0; i < count; ++i) {
-                String category = jsonCategories.getString(i);
-                if (category.indexOf('.') < 0) {
-                    category = activityPackage + '.' + category;
-                }
-                intent.addCategory(category);
-            }
-        }
+        intent.setAction(Intent.ACTION_RUN)
+                .setFlags(flags);
 
-        String data = jsonIntent.optString("data");
+        String data = String.valueOf(shortcut);
         if (data.length() > 0) {
             intent.setData(Uri.parse(data));
         }
 
-        JSONObject extras = jsonIntent.optJSONObject("extras");
-        if (extras != null) {
-            Iterator<String> keys = extras.keys();
-            while (keys.hasNext()) {
-                String key = keys.next();
-                Object value = extras.get(key);
-                if (value != null) {
-                    if (key.indexOf('.') < 0) {
-                        key = activityPackage + "." + key;
-                    }
-                    if (value instanceof Boolean) {
-                        intent.putExtra(key, (Boolean) value);
-                    } else if (value instanceof Integer) {
-                        intent.putExtra(key, (Integer) value);
-                    } else if (value instanceof Long) {
-                        intent.putExtra(key, (Long) value);
-                    } else if (value instanceof Float) {
-                        intent.putExtra(key, (Float) value);
-                    } else if (value instanceof Double) {
-                        intent.putExtra(key, (Double) value);
-                    } else {
-                        intent.putExtra(key, value.toString());
-                    }
-                }
-            }
-        }
+
         return intent;
     }
 
@@ -278,8 +240,8 @@ public class AppShortcuts extends Plugin {
 
         ShortcutInfo.Builder builder = new ShortcutInfo.Builder(context, shortcutId);
 
-        String shortLabel = jsonShortcut.optString("shortLabel");
-        String longLabel = jsonShortcut.optString("longLabel");
+        String shortLabel = jsonShortcut.optString("title");
+        String longLabel = jsonShortcut.optString("subtitle");
         if (shortLabel.length() == 0 && longLabel.length() == 0) {
             throw new InvalidParameterException("A value for either 'shortLabel' or 'longLabel' is required");
         }
@@ -317,7 +279,7 @@ public class AppShortcuts extends Plugin {
         }
 
 
-        Intent intent = parseIntent(jsonIntent);
+        Intent intent = parseIntent(jsonIntent, jsonShortcut);
 
         return builder
                 .setShortLabel(shortLabel)
@@ -344,10 +306,10 @@ public class AppShortcuts extends Plugin {
 
         ShortcutInfoCompat.Builder builder = new ShortcutInfoCompat.Builder(context, shortcutId);
 
-        String shortLabel = jsonShortcut.optString("shortLabel");
-        String longLabel = jsonShortcut.optString("longLabel");
+        String shortLabel = jsonShortcut.optString("title");
+        String longLabel = jsonShortcut.optString("subtitle");
         if (shortLabel.length() == 0 && longLabel.length() == 0) {
-            throw new InvalidParameterException("A value for either 'shortLabel' or 'longLabel' is required");
+            throw new InvalidParameterException("A value for either 'title' or 'subtitle' is required");
         }
 
         if (shortLabel.length() == 0) {
@@ -375,7 +337,7 @@ public class AppShortcuts extends Plugin {
             jsonIntent = new JSONObject();
         }
 
-        Intent intent = parseIntent(jsonIntent);
+        Intent intent = parseIntent(jsonIntent, jsonShortcut);
 
         return builder
                 .setActivity(intent.getComponent())
@@ -390,5 +352,4 @@ public class AppShortcuts extends Plugin {
         byte[] decodedByte = Base64.decode(input, 0);
         return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
-
 }
