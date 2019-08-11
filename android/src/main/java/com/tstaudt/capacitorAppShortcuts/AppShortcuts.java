@@ -321,6 +321,9 @@ public class AppShortcuts extends Plugin {
     public void onShortcutPressed(PluginCall call) {
         try {
             call.resolve(new JSObject(this.latestIntent.getString("data")));
+            //Reset the latest intent to prevent, that
+            // the same intent is returned on another call of this method
+            this.latestIntent = null;
         } catch (JSONException e) {
             call.reject("App was started via app icon press");
         }
