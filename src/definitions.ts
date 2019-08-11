@@ -1,11 +1,11 @@
 //@ts-ignore
 declare module "@capacitor/core" {
     interface PluginRegistry {
-        AppShortcuts: IAppShortcutsPlugin;
+        AppShortcuts: AppShortcuts;
     }
 }
 
-export interface IAppShortcutsPlugin {
+export interface AppShortcuts {
 
     /**
      * Resolves promise, if dynamic shortcuts are supported
@@ -15,18 +15,48 @@ export interface IAppShortcutsPlugin {
     /**
      * Add a pinned shortcut
      */
-    addPinned(shortcut: Shortcut): Promise<void>;
+    addPinned(params: { shortcut: Shortcut }): Promise<void>;
+
+    /**
+     * Set dynamic shortcuts and overwrite the preview ones, if set
+     */
+    setDynamic(params: { shortcut: Array<Shortcut> }): Promise<void>;
 
     /**
      * Add dynamic shortcuts - inserted shortcuts always overwrite the preview ones
      */
-    setDynamic(shortcut: Array<Shortcut>): Promise<void>;
+    addDynamic(params: { shortcut: Array<Shortcut> }): Promise<void>;
 
     /**
-     * Get the data of the shortcut icon, that opened the app (activity)
-     * This function fails, if the app was launched via press on the app icon
+     * Returns the currently set shortcuts based on the type
      */
-    onHomeIconPressed(): Promise<any>;
+    getShortcuts(params: { type: ShortcutType }): Promise<Array<Shortcut>>
+    
+    /**
+     * Disable pinned shortcuts by id / ids
+     */
+    disablePinnedShortcuts(params: { ids: Array<string>, message: string }): Promise<void>;
+
+    /**
+     * Enable pinned shortcuts by id / ids
+     */
+    enablePinnedShortcuts(params: { ids: Array<string> }): Promise<void>
+
+    /**
+     * Remove dynamic shortcuts by id
+     */
+    removeDynamicShortcuts(params: { ids: Array<string> }): Promise<void>;
+
+    /**
+     * Deletes all dynamic shortcuts from app
+     */
+    resetDynamicShortcuts(): Promise<void>;
+
+    /**
+     * Get the data of the shortcut icon, that opened the app
+     * This function fails, if the app was launched via press on the app icon (android only)
+     */
+    onShortcutPressed(): Promise<any>;
 }
 
 export interface Shortcut {
@@ -104,4 +134,9 @@ export enum IOSShortcutIcon {
     Shuffle = 'Shuffle',
     Audio = 'Audio',
     Update = 'Update',
+}
+
+export enum ShortcutType {
+    Pinned = 'Pinned',
+    Dynamic = 'Dynamic'
 }

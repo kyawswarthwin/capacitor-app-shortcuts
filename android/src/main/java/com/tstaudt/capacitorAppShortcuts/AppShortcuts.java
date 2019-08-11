@@ -37,6 +37,7 @@ import org.json.JSONObject;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 @NativePlugin(
@@ -48,9 +49,16 @@ import java.util.Set;
 public class AppShortcuts extends Plugin {
 
     private static final String TAG = "ShortcutsPlugin";
-    private JSONObject latestIntent = null;
-    private PluginCall onNewIntentCallbackContext = null;
 
+    /**
+     * Latest intent, which is used to launch this activity
+     */
+    private JSONObject latestIntent = null;
+
+    /**
+     * Returns an object with the support info of the shortcuts
+     * returns supportInfo {"appShortcuts":boolean;"pinnedShortcuts":boolean"}
+     */
     @PluginMethod()
     public void isSupported(PluginCall call) {
         AppCompatActivity activity = getActivity();
@@ -69,6 +77,11 @@ public class AppShortcuts extends Plugin {
         }
     }
 
+    /**
+     * Adds a list of shortcuts to the app symbol
+     *
+     * @param call - {shortcuts: Array<Shortcut>}
+     */
     @PluginMethod()
     public void setDynamic(PluginCall call) {
 
@@ -100,8 +113,95 @@ public class AppShortcuts extends Plugin {
         }
     }
 
+    /**
+     * Adds a list of shortcuts to the app symbol
+     *
+     * @param call - {type: 'pinned' or 'dynamic'}
+     */
     @PluginMethod()
-    public void addPinned(PluginCall call) {
+    public void getShortcuts(PluginCall call) {
+
+        AppCompatActivity activity = getActivity();
+        Context context = activity.getApplicationContext();
+        ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+        List<ShortcutInfo> infoList;
+        JSONArray shortcutData = new JSONArray();
+
+
+        try {
+
+            String type = call.getString("type");
+
+            switch (type) {
+                case "pinned":
+                    infoList = shortcutManager.getPinnedShortcuts();
+                    break;
+                case "dynamic":
+                    infoList = shortcutManager.getDynamicShortcuts();
+                    break;
+                default:
+                    infoList = shortcutManager.getDynamicShortcuts();
+                    call.reject("Invalid type entered. Use the values 'pinned' or 'dynamic'");
+                    break;
+            }
+
+            for (int i = 0; i < infoList.size(); i++) {
+                ShortcutInfo result = infoList.get(i);
+                shortcutData.put(result.getIntent().getData());
+            }
+
+            Log.i(TAG, String.format("Returned % dynamic shortcuts.", shortcutData.length()));
+            call.success(new JSObject(String.valueOf(shortcutData)));
+        } catch (JSONException e) {
+            call.reject(e.getMessage(), e);
+        } catch (NullPointerException e) {
+            call.reject(e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Adds a list of shortcuts to the app symbol
+     *
+     * @param call - {shortcuts: Array<Shortcut>}
+     */
+    @PluginMethod()
+    public void addDynamic(PluginCall call) {
+
+        try {
+            JSArray args = call.getArray("shortcuts");
+            if (args.length() < 1) {
+                call.reject("Inserted value is not a array or has no values");
+            }
+
+            int count = args.length();
+
+            ArrayList<ShortcutInfo> shortcuts = new ArrayList<ShortcutInfo>(count);
+
+            for (int i = 0; i < count; ++i) {
+                shortcuts.add(buildDynamicShortcut(args.optJSONObject(i)));
+            }
+
+            AppCompatActivity activity = getActivity();
+
+            Context context = activity.getApplicationContext();
+            ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+            shortcutManager.addDynamicShortcuts(shortcuts);
+            Log.i(TAG, String.format("Added % dynamic shortcuts.", count));
+            call.success();
+        } catch (PackageManager.NameNotFoundException e) {
+            call.reject(e.getMessage(), e);
+        } catch (JSONException e) {
+            call.reject(e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Creates a pinned shortcuts, which can be confirmed or cancelled by user
+     *
+     * @param call - {shortcut: Shortcut}
+     */
+    @PluginMethod()
+    public void addPinnedShortcut(PluginCall call) {
         try {
             ShortcutInfoCompat shortcut = buildPinnedShortcut(call.getData());
             AppCompatActivity activity = getActivity();
@@ -119,23 +219,106 @@ public class AppShortcuts extends Plugin {
         }
     }
 
+    /**
+     * Disable pinned shortcuts by ids
+     *
+     * @param call - {ids:Array<string>, message?:string} - ids of shortcuts to disable
+     */
     @PluginMethod()
-    public void getIntent(PluginCall call) {
-        // Intent intent = new Intent(Intent.ACTION_VIEW);
-        // Intent intent = this.cordova.getActivity().getIntent();
-        try {
-            AppCompatActivity activity = getActivity();
-            Intent intent = activity.getIntent();
+    public void disablePinnedShortcuts(PluginCall call) {
+        AppCompatActivity activity = getActivity();
+        Context context = activity.getApplicationContext();
+        ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+        JSONArray array = call.getArray("ids");
+        String message = call.getString("message");
 
-            PluginResult result = new PluginResult(new JSObject(String.valueOf(buildIntent(intent))));
-            call.success(new JSObject(String.valueOf(result)));
-        } catch (JSONException e) {
-            call.reject(e.getMessage(), e);
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                list.add(array.getString(i));
+            } catch (JSONException e) {
+                call.error(e.getMessage(), e);
+            }
         }
+
+        if (message != null) {
+            //Disable shortcuts with a custom message!
+            shortcutManager.disableShortcuts(list, message);
+        } else {
+            //Disable shortcuts with a custom message!
+            shortcutManager.disableShortcuts(list);
+        }
+
     }
 
+    /**
+     * Disable pinned shortcuts by ids
+     *
+     * @param call - {ids:Array<string>} - ids of shortcuts to enable
+     */
     @PluginMethod()
-    public void onHomeIconPressed(PluginCall call) {
+    public void enablePinnedShortcuts(PluginCall call) {
+        AppCompatActivity activity = getActivity();
+        Context context = activity.getApplicationContext();
+        ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+        JSONArray array = call.getArray("ids");
+
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                list.add(array.getString(i));
+            } catch (JSONException e) {
+                call.error(e.getMessage(), e);
+            }
+
+        }
+        shortcutManager.enableShortcuts(list);
+        call.success();
+    }
+
+    /**
+     * Remove dynamic shortcuts by idsword
+     *
+     * @param call - {ids:Array<string>} - ids of shortcuts to enable
+     */
+    @PluginMethod()
+    public void removeDynamicShortcuts(PluginCall call) {
+        AppCompatActivity activity = getActivity();
+        Context context = activity.getApplicationContext();
+        ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+        JSONArray array = call.getArray("ids");
+
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                list.add(array.getString(i));
+            } catch (JSONException e) {
+                call.error(e.getMessage(), e);
+            }
+
+        }
+        shortcutManager.removeDynamicShortcuts(list);
+        call.success();
+    }
+
+    /**
+     * Removes all dynamic shortcuts from the app icon
+     */
+    @PluginMethod()
+    public void resetDynamicShortcuts(PluginCall call) {
+        AppCompatActivity activity = getActivity();
+        Context context = activity.getApplicationContext();
+        ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+        shortcutManager.removeAllDynamicShortcuts();
+        call.success();
+    }
+
+    /**
+     * Returns the intent data of the intent by shortcut
+     * returns the data of the intent
+     */
+    @PluginMethod()
+    public void onShortcutPressed(PluginCall call) {
         try {
             call.resolve(new JSObject(this.latestIntent.getString("data")));
         } catch (JSONException e) {
@@ -143,6 +326,9 @@ public class AppShortcuts extends Plugin {
         }
     }
 
+    /**
+     * Get called, if the activity receives a new intent
+     */
     @Override
     public void handleOnNewIntent(Intent intent) {
         try {
